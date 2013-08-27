@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name"> 纯真IP查询</string>
+    <string name="hello">IP 查询中...</string>
+    <string name="pleaseInputIP">请输入IP地址</string>
+</resources>

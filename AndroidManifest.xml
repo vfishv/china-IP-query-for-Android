@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.appsot.zqt.ip"
+      android:versionCode="11"
+      android:versionName="1.2">
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="10"/>
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".IPActivity"
+                  android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="com.feedback.ui.SendFeedback" android:windowSoftInputMode="adjustResize" />
+        <activity android:name="com.feedback.ui.FeedbackConversations" />
+        <activity android:name="com.feedback.ui.FeedbackConversation" android:configChanges="keyboard" />
+            
+            
+        <activity android:name="net.youmi.android.AdActivity"
+	  		android:configChanges="keyboard|keyboardHidden|orientation"/>
+        <meta-data android:value="4ea43d9c5270156d2c000016" android:name="UMENG_APPKEY"></meta-data>
+		
+		<receiver android:name="net.youmi.android.YoumiReceiver" >
+		    <intent-filter>
+		        <action android:name="android.intent.action.PACKAGE_ADDED" />
+		        <action android:name="android.intent.action.PACKAGE_INSTALL" />
+		        <data android:scheme="package" />
+		    </intent-filter>
+		</receiver>
+
+    </application>
+    
+    <!-- 连接网络权限 ，用于请求广告(必须)-->
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<!-- 读取手机基本信息权限，用于精确统计用户的机型等信息(必须) -->
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<!-- 读取网络信息权限，用于识别gprs网络的接入点的情况(必须)-->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<!-- 读写sd卡的权限，用于缓存广告所用到的图片，节省流量 ，并可获得更好的用户体验(所有使用有米android 2.0版本以上sdk的应用都会共享缓存的图片)-->
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<!-- 获取用户地理信息权限，用于帮助精确统计开发者的程序发布之后的用户分布情况 -->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	<!-- 快捷方式 -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    
+	<uses-permission android:name="android.permission.READ_LOGS" /> 
+	
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />  
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> 
+</manifest>
